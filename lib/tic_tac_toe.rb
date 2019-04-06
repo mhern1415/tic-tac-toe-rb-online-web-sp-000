@@ -51,3 +51,16 @@ def current_player(board)
   end
   return player
 end
+
+def turn(board)
+  puts "Please choose a number 1-9:"
+  user_input = gets.chomp
+  index = input_to_index(user_input)
+  if valid_move?(board, index)
+    player_token = current_player(board)
+    move(board, index, player_token)
+    display_board(board)
+  else
+    turn(board)
+  end
+end
