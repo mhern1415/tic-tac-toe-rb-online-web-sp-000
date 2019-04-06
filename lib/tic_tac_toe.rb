@@ -89,3 +89,19 @@ def full?(board)
     box == "X" || box == "O"
   end
 end
+
+def draw?(board)
+  if !won?(board) && full?(board)
+    return true
+  else
+    return false
+  end
+end
+
+def over?(board)
+  if won?(board) || draw?(board)
+    return true
+  else
+    return false
+  end
+end
